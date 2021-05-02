@@ -44,3 +44,20 @@ int main()
     }
     return 0;
 }
+
+char *getWordVertical(int idx){
+	char *CheckVertical = (char*)malloc(16 * sizeof(char));
+	for(int i=0; i<rows; i++)
+		CheckVertical[i] = words[i][idx];
+	return CheckVertical;
+        }
+char *reverse(char *charstring){
+	char *check1, *check2;
+      if (! charstring || ! *charstring)
+            return charstring;
+      for (check1 = charstring, check2 = charstring + strlen(charstring) - 1; check2 > check1; ++check1, --check2)
+      {
+        *check1 ^= *check2;
+        *check2 ^= *check1;
+        *check1 ^= *check2;}
+      return charstring;}
